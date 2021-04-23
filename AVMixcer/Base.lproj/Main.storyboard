@@ -1,24 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVMixcer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woj-s4-yUe" customClass="AVPlayerView" customModule="AVMixcer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="woj-s4-yUe" secondAttribute="height" multiplier="16:9" id="xkO-1Z-FNY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABm-zF-4oW">
+                                <rect key="frame" x="0.0" y="277" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3tm-pE-796"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="woj-s4-yUe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kpa-qJ-k0d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ABm-zF-4oW" secondAttribute="trailing" id="LQ8-Ii-eDL"/>
+                            <constraint firstItem="ABm-zF-4oW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OXc-5W-VjQ"/>
+                            <constraint firstItem="woj-s4-yUe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bTR-RA-gez"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="woj-s4-yUe" secondAttribute="trailing" id="eXx-dq-mg5"/>
+                            <constraint firstItem="ABm-zF-4oW" firstAttribute="top" secondItem="woj-s4-yUe" secondAttribute="bottom" id="x7T-WF-IDY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="controContainer" destination="ABm-zF-4oW" id="Pps-Vb-3Ll"/>
+                        <outlet property="previewWindow" destination="woj-s4-yUe" id="ex8-0X-WTN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20" y="94"/>
+        </scene>
+        <!--Player Control View Controller-->
+        <scene sceneID="Xh8-EW-BAe">
+            <objects>
+                <viewController storyboardIdentifier="controlController" id="h3j-kU-miM" customClass="PlayerControlViewController" customModule="AVMixcer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83o-2r-BOW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-xC-Arh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tR8-Wd-7t2">
+                                        <rect key="frame" x="184.5" y="25" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="ATy-Oj-KF0"/>
+                                            <constraint firstAttribute="height" constant="45" id="WOH-uu-B4O"/>
+                                        </constraints>
+                                        <state key="normal" image="play.circle" catalog="system"/>
+                                        <state key="selected" image="pause.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="playPause:" destination="h3j-kU-miM" eventType="touchUpInside" id="A6G-FG-Md6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="tR8-Wd-7t2" firstAttribute="centerY" secondItem="hxh-xC-Arh" secondAttribute="centerY" id="KcX-9U-c5D"/>
+                                    <constraint firstItem="tR8-Wd-7t2" firstAttribute="centerX" secondItem="hxh-xC-Arh" secondAttribute="centerX" id="c9q-To-hY0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fHw-T9-5Ka"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hxh-xC-Arh" firstAttribute="leading" secondItem="83o-2r-BOW" secondAttribute="leading" id="562-Mm-uSZ"/>
+                            <constraint firstAttribute="trailing" secondItem="hxh-xC-Arh" secondAttribute="trailing" id="5xC-dJ-HZ3"/>
+                            <constraint firstItem="hxh-xC-Arh" firstAttribute="top" secondItem="83o-2r-BOW" secondAttribute="top" id="Exr-g2-hZW"/>
+                            <constraint firstAttribute="bottom" secondItem="hxh-xC-Arh" secondAttribute="bottom" id="lyi-aK-eta"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="95"/>
+                    <connections>
+                        <outlet property="playPauseButton" destination="tR8-Wd-7t2" id="H2A-Dv-Q2S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJ2-kX-11B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242" y="-579"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pause.circle" catalog="system" width="128" height="121"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
