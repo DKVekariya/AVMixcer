@@ -61,6 +61,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-xC-Arh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
                                 <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZX2-oi-6ZY">
+                                        <rect key="frame" x="14" y="0.0" width="386" height="31"/>
+                                    </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tR8-Wd-7t2">
                                         <rect key="frame" x="184.5" y="25" width="45" height="45"/>
                                         <constraints>
@@ -76,8 +79,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="ZX2-oi-6ZY" firstAttribute="leading" secondItem="hxh-xC-Arh" secondAttribute="leading" constant="16" id="87T-DK-Fix"/>
                                     <constraint firstItem="tR8-Wd-7t2" firstAttribute="centerY" secondItem="hxh-xC-Arh" secondAttribute="centerY" id="KcX-9U-c5D"/>
                                     <constraint firstItem="tR8-Wd-7t2" firstAttribute="centerX" secondItem="hxh-xC-Arh" secondAttribute="centerX" id="c9q-To-hY0"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZX2-oi-6ZY" secondAttribute="trailing" constant="16" id="joX-CQ-tK1"/>
+                                    <constraint firstItem="ZX2-oi-6ZY" firstAttribute="top" secondItem="hxh-xC-Arh" secondAttribute="top" id="zrs-Id-taf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -93,11 +99,12 @@
                     <size key="freeformSize" width="414" height="95"/>
                     <connections>
                         <outlet property="playPauseButton" destination="tR8-Wd-7t2" id="H2A-Dv-Q2S"/>
+                        <outlet property="slider" destination="ZX2-oi-6ZY" id="1al-e6-xdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJ2-kX-11B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="-579"/>
+            <point key="canvasLocation" x="704" y="-175"/>
         </scene>
     </scenes>
     <resources>

@@ -7,22 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4244174926343BA600BB3B9D /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4244174826343BA600BB3B9D /* video1.mp4 */; };
+		427FB73726358E88005E7CAA /* VideoComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FB73626358E88005E7CAA /* VideoComposer.swift */; };
 		42C9A60C2632F29400432E78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A60B2632F29400432E78 /* AppDelegate.swift */; };
 		42C9A60E2632F29400432E78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A60D2632F29400432E78 /* SceneDelegate.swift */; };
 		42C9A6102632F29400432E78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A60F2632F29400432E78 /* ViewController.swift */; };
 		42C9A6132632F29400432E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C9A6112632F29400432E78 /* Main.storyboard */; };
 		42C9A6152632F29500432E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C9A6142632F29500432E78 /* Assets.xcassets */; };
 		42C9A6182632F29500432E78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C9A6162632F29500432E78 /* LaunchScreen.storyboard */; };
-		42C9A6222633020F00432E78 /* Video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 42C9A620263301FA00432E78 /* Video2.mp4 */; };
-		42C9A6242633021300432E78 /* Video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 42C9A621263301FA00432E78 /* Video1.mp4 */; };
+		42C9A6222633020F00432E78 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 42C9A620263301FA00432E78 /* video2.mp4 */; };
 		42C9A62826330A0600432E78 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A62726330A0600432E78 /* AVPlayerView.swift */; };
 		42C9A62C26330C8800432E78 /* PlayerControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A62B26330C8800432E78 /* PlayerControlViewController.swift */; };
 		42C9A63026331DAE00432E78 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A62F26331DAE00432E78 /* UIViewController+Extension.swift */; };
 		42C9A63426331DE900432E78 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A63326331DE900432E78 /* UIView+Extension.swift */; };
 		42C9A6372633236100432E78 /* AVPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A6362633236100432E78 /* AVPlayer+Extension.swift */; };
+		42EE77EE263549A5002DB6E7 /* video3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 42EE77ED263549A5002DB6E7 /* video3.mp4 */; };
+		42EE77F126354A0F002DB6E7 /* video5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 42EE77F026354A0F002DB6E7 /* video5.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4244174826343BA600BB3B9D /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video1.mp4; path = ../../../Downloads/video1.mp4; sourceTree = "<group>"; };
+		427FB73626358E88005E7CAA /* VideoComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComposer.swift; sourceTree = "<group>"; };
 		42C9A6082632F29400432E78 /* AVMixcer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVMixcer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C9A60B2632F29400432E78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42C9A60D2632F29400432E78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,13 +36,14 @@
 		42C9A6142632F29500432E78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42C9A6172632F29500432E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42C9A6192632F29500432E78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42C9A620263301FA00432E78 /* Video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video2.mp4; sourceTree = "<group>"; };
-		42C9A621263301FA00432E78 /* Video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video1.mp4; sourceTree = "<group>"; };
+		42C9A620263301FA00432E78 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
 		42C9A62726330A0600432E78 /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		42C9A62B26330C8800432E78 /* PlayerControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlViewController.swift; sourceTree = "<group>"; };
 		42C9A62F26331DAE00432E78 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		42C9A63326331DE900432E78 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		42C9A6362633236100432E78 /* AVPlayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extension.swift"; sourceTree = "<group>"; };
+		42EE77ED263549A5002DB6E7 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video3.mp4; sourceTree = "<group>"; };
+		42EE77F026354A0F002DB6E7 /* video5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video5.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		427FB73526358E6E005E7CAA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				427FB73626358E88005E7CAA /* VideoComposer.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		42C9A5FF2632F29400432E78 = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +89,12 @@
 				42C9A62726330A0600432E78 /* AVPlayerView.swift */,
 				42C9A62B26330C8800432E78 /* PlayerControlViewController.swift */,
 				42C9A60F2632F29400432E78 /* ViewController.swift */,
+				427FB73526358E6E005E7CAA /* Data */,
 				42C9A62E26331D8300432E78 /* Utils */,
-				42C9A621263301FA00432E78 /* Video1.mp4 */,
-				42C9A620263301FA00432E78 /* Video2.mp4 */,
+				4244174826343BA600BB3B9D /* video1.mp4 */,
+				42EE77F026354A0F002DB6E7 /* video5.mp4 */,
+				42C9A620263301FA00432E78 /* video2.mp4 */,
+				42EE77ED263549A5002DB6E7 /* video3.mp4 */,
 				42C9A6112632F29400432E78 /* Main.storyboard */,
 				42C9A6142632F29500432E78 /* Assets.xcassets */,
 				42C9A6162632F29500432E78 /* LaunchScreen.storyboard */,
@@ -154,10 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C9A6182632F29500432E78 /* LaunchScreen.storyboard in Resources */,
+				42EE77EE263549A5002DB6E7 /* video3.mp4 in Resources */,
 				42C9A6152632F29500432E78 /* Assets.xcassets in Resources */,
 				42C9A6132632F29400432E78 /* Main.storyboard in Resources */,
-				42C9A6222633020F00432E78 /* Video2.mp4 in Resources */,
-				42C9A6242633021300432E78 /* Video1.mp4 in Resources */,
+				42EE77F126354A0F002DB6E7 /* video5.mp4 in Resources */,
+				4244174926343BA600BB3B9D /* video1.mp4 in Resources */,
+				42C9A6222633020F00432E78 /* video2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +189,7 @@
 			files = (
 				42C9A63026331DAE00432E78 /* UIViewController+Extension.swift in Sources */,
 				42C9A63426331DE900432E78 /* UIView+Extension.swift in Sources */,
+				427FB73726358E88005E7CAA /* VideoComposer.swift in Sources */,
 				42C9A62C26330C8800432E78 /* PlayerControlViewController.swift in Sources */,
 				42C9A6102632F29400432E78 /* ViewController.swift in Sources */,
 				42C9A60C2632F29400432E78 /* AppDelegate.swift in Sources */,
