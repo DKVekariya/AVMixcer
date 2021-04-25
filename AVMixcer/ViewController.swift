@@ -7,6 +7,8 @@
 
 import UIKit
 import AVKit
+import MediaPlayer
+import Combine
 
 class ViewController: UIViewController {
     
@@ -22,24 +24,30 @@ class ViewController: UIViewController {
         return controlVC
     }()
     
+    var cancellables = Set<AnyCancellable>()
+    var playerOb:AVPlayer.AVPlayerObserver?
+    var composer = VideoComposer()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let url = Bundle.main.url(forResource: "Video2", withExtension: "mp4")
-        let item = AVPlayerItem(url: url!)
-        
-        player.replaceCurrentItem(with: item)
-        previewWindow.playerLayer.player = player
-        
-        
         insert(controlVC, in: controContainer)
         
-        
+        player.replaceCurrentItem(with: AVPlayerItem(asset: composer.buildComposition()))
+        previewWindow.playerLayer.player = player
+        player.seek(to: CMTime.init(seconds: 40, preferredTimescale: 1))
+        composer.exportVideo(composition: composer.buildComposition()) {
+            print("export complete")
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidEndPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+            
+        self.playerOb = player.playerObserver
+        playerOb?.periodicTimeObserver.sink(receiveValue: { [weak self] _ in
+            self?.controlVC.reloadProgress()
+        }).store(in: &cancellables)
         
+        player.volume = 0.2
     }
-
     
     @objc func playerDidEndPlaying(_ n:Notification) {
         DispatchQueue.main.async {
@@ -50,10 +58,14 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 extension ViewController: PlayerControlDelegate {
+    func playerControlControlerDidSelectSeek(_ controller: PlayerControlViewController, seek progress: Float) {
+        player.seek(to: CMTime(seconds: player.totalDuration * TimeInterval(progress), preferredTimescale: 600))
+    }
+    
     func playerControlControlerDidSelectPlayPause(_ controller: PlayerControlViewController) {
         if player.isPlaying {
             player.pause()
@@ -64,10 +76,11 @@ extension ViewController: PlayerControlDelegate {
 }
 
 extension ViewController: PlayerControlDataSource {
+    func currentProgress() -> Float {
+        player.progress
+    }
+    
     func isPlayerPlaying() -> Bool {
         player.isPlaying
     }
 }
- 
-
-
