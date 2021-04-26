@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422DABA82636725500C0D895 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422DABA72636725500C0D895 /* UIView+Extension.swift */; };
 		4244174926343BA600BB3B9D /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4244174826343BA600BB3B9D /* video1.mp4 */; };
 		427FB73726358E88005E7CAA /* VideoComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FB73626358E88005E7CAA /* VideoComposer.swift */; };
 		42C9A60C2632F29400432E78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A60B2632F29400432E78 /* AppDelegate.swift */; };
@@ -19,13 +20,13 @@
 		42C9A62826330A0600432E78 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A62726330A0600432E78 /* AVPlayerView.swift */; };
 		42C9A62C26330C8800432E78 /* PlayerControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A62B26330C8800432E78 /* PlayerControlViewController.swift */; };
 		42C9A63026331DAE00432E78 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A62F26331DAE00432E78 /* UIViewController+Extension.swift */; };
-		42C9A63426331DE900432E78 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A63326331DE900432E78 /* UIView+Extension.swift */; };
 		42C9A6372633236100432E78 /* AVPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C9A6362633236100432E78 /* AVPlayer+Extension.swift */; };
 		42EE77EE263549A5002DB6E7 /* video3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 42EE77ED263549A5002DB6E7 /* video3.mp4 */; };
 		42EE77F126354A0F002DB6E7 /* video5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 42EE77F026354A0F002DB6E7 /* video5.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		422DABA72636725500C0D895 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4244174826343BA600BB3B9D /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video1.mp4; path = ../../../Downloads/video1.mp4; sourceTree = "<group>"; };
 		427FB73626358E88005E7CAA /* VideoComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComposer.swift; sourceTree = "<group>"; };
 		42C9A6082632F29400432E78 /* AVMixcer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVMixcer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,7 +41,6 @@
 		42C9A62726330A0600432E78 /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		42C9A62B26330C8800432E78 /* PlayerControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlViewController.swift; sourceTree = "<group>"; };
 		42C9A62F26331DAE00432E78 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		42C9A63326331DE900432E78 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		42C9A6362633236100432E78 /* AVPlayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extension.swift"; sourceTree = "<group>"; };
 		42EE77ED263549A5002DB6E7 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video3.mp4; sourceTree = "<group>"; };
 		42EE77F026354A0F002DB6E7 /* video5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video5.mp4; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				42C9A62F26331DAE00432E78 /* UIViewController+Extension.swift */,
-				42C9A63326331DE900432E78 /* UIView+Extension.swift */,
+				422DABA72636725500C0D895 /* UIView+Extension.swift */,
 				42C9A6362633236100432E78 /* AVPlayer+Extension.swift */,
 			);
 			path = Utils;
@@ -188,9 +188,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C9A63026331DAE00432E78 /* UIViewController+Extension.swift in Sources */,
-				42C9A63426331DE900432E78 /* UIView+Extension.swift in Sources */,
 				427FB73726358E88005E7CAA /* VideoComposer.swift in Sources */,
 				42C9A62C26330C8800432E78 /* PlayerControlViewController.swift in Sources */,
+				422DABA82636725500C0D895 /* UIView+Extension.swift in Sources */,
 				42C9A6102632F29400432E78 /* ViewController.swift in Sources */,
 				42C9A60C2632F29400432E78 /* AppDelegate.swift in Sources */,
 				42C9A60E2632F29400432E78 /* SceneDelegate.swift in Sources */,
@@ -344,6 +344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AVMixcer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,6 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AVMixcer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
