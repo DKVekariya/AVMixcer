@@ -33,12 +33,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         insert(controlVC, in: controContainer)
         
-        player.replaceCurrentItem(with: AVPlayerItem(asset: composer.buildComposition()))
+        player.replaceCurrentItem(with: composer.buildPlayerItem())
         previewWindow.playerLayer.player = player
         player.seek(to: CMTime.init(seconds: 40, preferredTimescale: 1))
-        composer.exportVideo(composition: composer.buildComposition()) {
-            print("export complete")
-        }
+//        composer.exportVideo(composition: composer.buildComposition()) {
+//            print("export complete")
+//        }
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidEndPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
             
         self.playerOb = player.playerObserver

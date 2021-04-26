@@ -7,6 +7,7 @@
 
 import Foundation
 import AVFoundation
+import CoreImage
 
 class VideoComposer {
     
@@ -56,4 +57,16 @@ class VideoComposer {
             print("exporter error\(exporter?.error)")
         })
     }
+    
+    
+    func buildPlayerItem() -> AVPlayerItem {
+        let filter = CIFilter(name: "CIColorInvert")
+        let item = AVPlayerItem(asset: buildComposition())
+        item.videoComposition = AVVideoComposition(asset: item.asset, applyingCIFiltersWithHandler: { (request) in
+            filter?.setValue(request.sourceImage, forKey: kCIInputImageKey)
+            request.finish(with: (filter?.outputImage)!, context: nil)
+        })
+        return item
+    }
+    
 }
