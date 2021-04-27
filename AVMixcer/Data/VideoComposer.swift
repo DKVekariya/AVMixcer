@@ -44,7 +44,7 @@ class VideoComposer {
     }
     
     func exportVideo(composition:AVComposition, completion:@escaping (() -> Void)) {
-        let exportPath: String = NSTemporaryDirectory().appendingFormat("/video.mp4")
+        let exportPath: String = NSTemporaryDirectory().appendingFormat("video.mp4")
         let exportUrl: URL = URL(fileURLWithPath: exportPath)
 
         let exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality)
@@ -55,6 +55,53 @@ class VideoComposer {
         exporter?.exportAsynchronously(completionHandler: {
             completion()
             print("exporter error\(exporter?.error)")
+        })
+    }
+    
+    func buildCompositionForSingeTrack() -> AVComposition {
+        let composition = AVMutableComposition()
+        let track = composition.addMutableTrack(withMediaType: .video, preferredTrackID: 100)
+        let audioCompositiontrack = composition.addMutableTrack(withMediaType: .audio, preferredTrackID: 200)
+        
+        let url1 = Bundle.main.url(forResource: "video1", withExtension: "mp4")
+        let firstVideo = AVAsset(url: url1!)
+        if let videoTrackOfFirstVideo = firstVideo.tracks(withMediaType: .video).first, let audioTrackOfFirstVideo = firstVideo.tracks(withMediaType: .audio).first {
+            do {
+                let firstTrackRange = CMTimeRange(start: .zero, duration: firstVideo.duration)
+                try track?.insertTimeRange(firstTrackRange , of: videoTrackOfFirstVideo, at: .zero)
+                //try audioCompositiontrack?.insertTimeRange
+                try audioCompositiontrack?.insertTimeRange(firstTrackRange, of: audioTrackOfFirstVideo, at: .zero)
+            } catch {
+                print(error)
+            }
+        }
+        return  composition
+    }
+    
+    func exportVideoWithFilter() {
+        let exportPath: String = NSTemporaryDirectory().appendingFormat("FilteredVideo.mp4")
+        let exportUrl: URL = URL(fileURLWithPath: exportPath)
+        let filter = CIFilter(name: "CIColorInvert")
+        
+        let asset = buildCompositionForSingeTrack()
+        let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPreset1920x1080)
+        export!.outputFileType = .mp4
+        export!.outputURL = exportUrl
+        export?.videoComposition = AVVideoComposition(asset: asset, applyingCIFiltersWithHandler: { request in
+            let source = request.sourceImage.clampedToExtent()
+            filter!.setValue(source, forKey: kCIInputImageKey)
+            let output = filter?.outputImage!.cropped(to: request.sourceImage.extent)
+            request.finish(with: output!, context: nil)
+        })
+        
+        export!.exportAsynchronously(completionHandler: {
+            if let error = export?.error {
+                print("Export failed -> Reason: \(error.localizedDescription))")
+                print(error)
+            } else {
+                print("Video saved Succesfuly At: \(exportUrl)")
+            }
+           
         })
     }
     

@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         playerOb?.periodicTimeObserver.sink(receiveValue: { [weak self] _ in
             self?.controlVC.reloadProgress()
         }).store(in: &cancellables)
-        
+        composer.exportVideoWithFilter()
         player.volume = 0.2
     }
     
